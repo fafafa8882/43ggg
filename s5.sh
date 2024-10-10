@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# 更新系统
-sudo apt update && sudo apt upgrade -y
-
 # 安装必要的工具
 sudo apt install -y python3-pip dnscrypt-proxy wget
 
