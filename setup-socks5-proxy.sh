@@ -31,10 +31,13 @@ client pass {
     from: 0.0.0.0/0 to: 0.0.0.0/0
     log: error
 }
-pass {
+socks pass {
     from: 0.0.0.0/0 to: 0.0.0.0/0
     protocol: tcp udp
-    log: connect error
+    log: error
+    # 添加这一行来指定 DNS 解析
+    resolveprotocol: fake
+    route { to: 0.0.0.0/0 via: 127.0.0.1 port = 5053 }
 }
 EOF
 
